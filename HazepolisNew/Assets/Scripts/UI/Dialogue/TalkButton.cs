@@ -21,6 +21,11 @@ public class TalkButton : MonoBehaviour
         DialogUI.SetActive(false);
     }
 
+    private void Awake()
+    {
+         DontDestroyOnLoad(gameObject);
+    }
+
     void Update()
     {
         if (Button.activeSelf && Input.GetKeyDown(KeyCode.T))
@@ -29,5 +34,6 @@ public class TalkButton : MonoBehaviour
             trigger.StartDialog();
             Debug.Log("Conversation");
         }
+       
     }
 }
